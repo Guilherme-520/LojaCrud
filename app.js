@@ -1,9 +1,15 @@
 const express = require("express")
 const app = express()
-const axios = require("axios")
+const { Configuration, OpenAIApi } = require("openai");
 const handlebars = require("express-handlebars").engine
 const bodyParser = require("body-parser")
 const post = require("./models/post")
+
+require("dotenv").config();
+const configuration = new Configuration({
+  apiKey: process.env.OPENAI_API_KEY,
+});
+const openai = new OpenAIApi(configuration);
 
 app.engine("handlebars", handlebars({ defaultLayout: "main" }))
 app.set("view engine", "handlebars")
