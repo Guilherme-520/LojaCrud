@@ -1,0 +1,80 @@
+<div class="container text-center">
+    <div class="row">
+        <div class="col-1">
+            &nbsp;
+        </div>
+        <div class="col bg-primary">
+            <nav class="navbar bg-primary navbar-expand-lg" data-bs-theme="dark">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#">Loja Crud</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                        <div class="navbar-nav">
+                            <a class="nav-link active" aria-current="page" href="/">inicio</a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <div class="col-1">
+            &nbsp;
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-1">
+            &nbsp;
+        </div>
+        <div class="col bg-white">
+            &nbsp;
+        </div>
+        <div class="col-1">
+            &nbsp;
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-1">
+            &nbsp;
+        </div>
+        <div class="col bg-white">
+            <p class="text-start fs-5">Editar - Edite os dados do seu produto</p>
+            <p class="text-start fs-6">Sistema ira atualizar os dados dos seus produtos cadastrados.</p>
+            <p>
+                {{#each post}}
+                    {{#dataValues}}
+                        <form action="/atualizar" method="POST">
+                            <div class="mb-3 text-start">
+                                <input type="hidden" name="id" class="form-control" id="nome" value="{{id}}">
+                                <label class="form-label">Produto</label>
+                                <input type="text" name="produto" class="form-control" id="produto" value="{{produto}}"> 
+                            </div>
+                            <div class="mb-3 text-start">
+                                <label class="form-label">Marca</label>
+                                <input type="text" name="marca" class="form-control" id="marca" value="{{marca}}">
+                            </div>
+                            <div class="mb-3 text-start">
+                                <label class="form-label">Modelo</label>
+                                <input type="text" name="modelo" class="form-control" id="modelo" aria-describedby="emailHelp" value="{{modelo}}">
+                            </div>
+                            <div class="mb-3 text-start">
+                                <label class="form-label">Descrição:</label>
+                                <textarea name="descricao" class="form-control" placeholder="" id="descricao" style="height: 100px" >{{descricao}}</textarea>
+                            </div>
+                            <div class="mb-3 text-start">
+                                <label class="form-label">Palavras-Chave:</label>
+                                <textarea name="palavras_chave" class="form-control" placeholder="" id="palavras_chave" style="height: 100px" >{{palavras_chave}}</textarea>
+                            </div>
+                            <div class="mb-3 text-start">
+                                <button type="submit" class="btn btn-primary">Atualizar</button>
+                            </div>
+                        </form>
+                    {{/dataValues}}
+                {{/each}}
+            </p>
+        </div>
+        <div class="col-1">
+            &nbsp;
+        </div>
+    </div>
+</div>
